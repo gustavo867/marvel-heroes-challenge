@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Header from "../../components/Header";
 import * as S from "./styles";
 
@@ -7,7 +7,7 @@ import villainIcon from "../../assets/icons/villain.png";
 import antiHeroIcon from "../../assets/icons/antihero.png";
 import alienIcon from "../../assets/icons/alien.png";
 import humanIcon from "../../assets/icons/human.png";
-import { ImageSourcePropType } from "react-native";
+import { ImageSourcePropType, LogBox } from "react-native";
 
 import Data from "../../assets/data";
 import Hero from "../../components/Heroes";
@@ -75,6 +75,10 @@ const Home: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    LogBox.ignoreLogs(["VirtualizedLists"]);
+  }, []);
+
   const onSelectCategory = useCallback(
     (
       category:
@@ -93,8 +97,6 @@ const Home: React.FC = () => {
     },
     [select]
   );
-
-  console.log(select);
 
   const Item = (item: Category) => {
     return (
@@ -173,12 +175,6 @@ const Home: React.FC = () => {
           ) : (
             <Hero data={Data.humans} title="Humanos" />
           )}
-
-          {/* <Hero data={Data.heroes} title="Heróis" />
-          <Hero data={Data.villains} title="Vilões" />
-          <Hero data={Data.antiHeroes} title="Anti-heróis" />
-          <Hero data={Data.aliens} title="Alienígenas" />
-          <Hero data={Data.humans} title="Humanos" /> */}
         </S.HeroesContainer>
       </S.Scroll>
     </S.Container>

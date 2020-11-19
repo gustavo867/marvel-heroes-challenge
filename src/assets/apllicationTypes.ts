@@ -1,6 +1,6 @@
 import { ImageSourcePropType } from "react-native";
 
-interface Caracteristics {
+export interface Caracteristics {
   birth: string;
   weight: {
     value: number;

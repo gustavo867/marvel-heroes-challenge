@@ -4,18 +4,16 @@
     "slug": "marvel-heroes-challenge",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icons/marvel.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./src/assets/chars/spider-man.png",
+      "resizeMode": "cover",
+      "backgroundColor": "rgba(0, 0, 0, 0.85)"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

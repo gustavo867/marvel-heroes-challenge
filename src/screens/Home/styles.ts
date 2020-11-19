@@ -55,12 +55,12 @@ export const Center = styled.View`
 export const HeroesContainer = styled.View`
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 `;
 
 export const Scroll = styled.ScrollView`
   flex-grow: 0;
   margin-top: 18px;
-  margin-bottom: 10px;
 `;
 
 export const HeroesTitleContainer = styled.View`
